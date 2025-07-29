@@ -2,8 +2,8 @@ import discord
 import requests
 import os
 
-TOKEN = os.getenv("MTM5OTc5ODY0NDE5NDAxNzM5Mg.GRniX8.uFpIwoLyo3PLOVGVSovzJmZRFuFW1tLrV4iL8w")
-WEATHER_API_KEY = os.getenv("1ae29fb83b21b7f200bc7e725e7b99b7")
+TOKEN = os.getenv("DISCORD_TOKEN")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
@@ -38,4 +38,4 @@ async def on_message(message):
         weather = get_weather(city)
         await message.channel.send(weather)
 
-client.run(MTM5OTc5ODY0NDE5NDAxNzM5Mg.GRniX8.uFpIwoLyo3PLOVGVSovzJmZRFuFW1tLrV4iL8w)
+client.run(TOKEN)
