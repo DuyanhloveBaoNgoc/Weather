@@ -1,6 +1,8 @@
 import discord
 import requests
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
