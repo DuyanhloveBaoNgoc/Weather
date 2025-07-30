@@ -2,12 +2,14 @@ import discord
 import requests
 import os
 from dotenv import load_dotenv
-load_dotenv()
+
+load_dotenv()  # Đảm bảo nạp biến môi trường
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 intents = discord.Intents.default()
+intents.message_content = True  # Cho phép đọc nội dung tin nhắn
 client = discord.Client(intents=intents)
 
 def get_weather(city):
@@ -25,7 +27,7 @@ def get_weather(city):
 
 @client.event
 async def on_ready():
-    print(f"Đã đăng nhập thành: {client.user}")
+    print(f"✅ Đã đăng nhập thành công: {client.user}")
 
 @client.event
 async def on_message(message):
